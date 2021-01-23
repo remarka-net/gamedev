@@ -16,6 +16,7 @@ console.log('smb is connected');
 sock.emit('message', 'You are connected');
 
 sock.on('message', (text) => io.emit('message', text));
+sock.on('turn', ({x,y}) => io.emit('turn', {x,y}));
 });
 
 server.on('error', (err) => {
